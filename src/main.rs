@@ -6,6 +6,7 @@ mod screens {
 
 mod utils {
     pub mod disks;
+    pub mod mount;
 }
 
 mod fixes {
