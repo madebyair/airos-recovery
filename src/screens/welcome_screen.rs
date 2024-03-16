@@ -1,6 +1,7 @@
 use console::style;
 use dialoguer::{theme::ColorfulTheme, Select};
 use crate::screens::after_efibootmgr::after_efibootmgr;
+use crate::screens::index::index;
 
 pub fn welcome_screen() {
     clearscreen::clear().expect("failed to clear screen");
@@ -29,5 +30,7 @@ pub fn welcome_screen() {
 
     if selection == 0 {
         after_efibootmgr();
+    } else if selection == 1 {
+        index();
     }
 }

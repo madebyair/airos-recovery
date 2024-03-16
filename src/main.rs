@@ -1,6 +1,7 @@
 mod screens {
     pub mod welcome_screen;
     pub mod after_efibootmgr;
+    pub mod index;
 }
 
 mod utils {
