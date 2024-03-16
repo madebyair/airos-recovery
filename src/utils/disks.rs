@@ -38,5 +38,5 @@ pub fn get_disk() -> String {
         .output()
         .unwrap_or_else(|_| panic!("Failed to execute blkid. Are you root?"));
 
-    String::from_utf8(command.stdout).expect("got non UTF-8 data").replace("1", "")
+    String::from_utf8(command.stdout).expect("got non UTF-8 data").replace("1", "").replace("\n", "").replace(" ", "")
 }

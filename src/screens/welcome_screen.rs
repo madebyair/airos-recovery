@@ -1,5 +1,6 @@
 use console::style;
 use dialoguer::{theme::ColorfulTheme, Select};
+use crate::screens::after_efibootmgr::after_efibootmgr;
 
 pub fn welcome_screen() {
     clearscreen::clear().expect("failed to clear screen");
@@ -18,11 +19,15 @@ pub fn welcome_screen() {
 
     println!("{}", style("Use the up and down arrows, on your keyboard to navigate").white().bold());
 
-    let items = ["The system stopped loading and this is loading instead", "I'm nerd open, the doors!"];
+    let items = ["The system stopped loading and this is loading instead", "I'm nerd, open the doors!"];
 
-    let _selection = Select::with_theme(&ColorfulTheme::default())
+    let selection = Select::with_theme(&ColorfulTheme::default())
         .items(&items)
         .default(0)
         .interact()
         .unwrap();
+
+    if selection == 0 {
+        after_efibootmgr();
+    }
 }

@@ -1,10 +1,16 @@
 mod screens {
     pub mod welcome_screen;
+    pub mod after_efibootmgr;
 }
 
 mod utils {
     pub mod disks;
 }
+
+mod fixes {
+    pub mod add_boot_entry;
+}
+
 
 
 use console::style;
