@@ -2,6 +2,10 @@ mod screens {
     pub mod welcome_screen;
 }
 
+mod utils {
+    pub mod disks;
+}
+
 
 use console::style;
 
