@@ -23,7 +23,7 @@ pub fn is_root_mounted() -> bool {
 pub fn mount_root() {
     let uuid = get_uuid("root").unwrap();
 
-    fs::create_dir("/mnt/root").unwrap();
+    fs::create_dir("/mnt/root").unwrap_or(());
 
     Command::new("sh")
         .arg("-c")

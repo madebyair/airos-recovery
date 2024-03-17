@@ -2,11 +2,13 @@ mod screens {
     pub mod welcome_screen;
     pub mod after_efibootmgr;
     pub mod index;
+    pub mod os_version;
 }
 
 mod utils {
     pub mod disks;
     pub mod mount;
+    pub mod version;
 }
 
 mod fixes {

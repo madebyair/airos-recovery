@@ -1,6 +1,7 @@
 use console::style;
 use dialoguer::Select;
 use dialoguer::theme::ColorfulTheme;
+use crate::screens::os_version::os_version;
 use crate::utils::mount::{is_root_mounted, mount_root, umount_root};
 
 pub fn index() {
@@ -21,7 +22,7 @@ pub fn index() {
 
     let items_unmounted = ["Mount root", "Reboot"];
 
-    let items_mounted = ["Unmount root", "Reboot"];
+    let items_mounted = ["Unmount root", "Get airos version", "Reboot"];
 
     if root_mounted {
         items.extend_from_slice(&items_mounted);
@@ -40,6 +41,8 @@ pub fn index() {
         if selection == 0 {
             umount_root();
             index();
+        } else if selection == 1 {
+            os_version();
         }
     } else {
         if selection == 0 {
